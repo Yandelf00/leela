@@ -1,5 +1,6 @@
 package models
 
+// the Book model
 type Book struct {
 	Id       uint   `gorm:"primaryKey"`
 	Name     string `gorm:"not null"`

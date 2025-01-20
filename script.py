@@ -13,3 +13,5 @@ ascii_art = [match.strip() for match in ascii_art_matches]
 for art in ascii_art:
     print(art)
     print("-" * 40)  
+
+

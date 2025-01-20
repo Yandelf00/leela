@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/Yandelf00/leela/controller"
 	"github.com/Yandelf00/leela/database"
 )
 
@@ -19,5 +20,6 @@ func main() {
 		if input == "exit" {
 			break
 		}
+		controller.SetInputInstance(input)
 	}
 }

@@ -2,6 +2,7 @@ package models
 
 import "time"
 
+// the Task model
 type Task struct {
 	Id         uint   `gorm:"primaryKey"`
 	Name       string `gorm:"not null"`
