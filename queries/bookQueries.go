@@ -38,3 +38,52 @@ func AddBook() {
 	}
 	database.DB.Create(&book)
 }
+
+func GetAllBooks() {
+	var books []models.Book
+	database.DB.Find(&books)
+	for _, book := range books {
+		fmt.Printf("book name : %s \n", book.Name)
+	}
+}
+
+func GetBookByName(name string) {
+	var books []models.Book
+	database.DB.Where("name = ?", name).Find(&books)
+	for _, book := range books {
+		fmt.Printf("book name : %s \n", book.Name)
+	}
+}
+
+func GetBookByCategory(category string) {
+	var books []models.Book
+	database.DB.Where("category = ?", category).Find(&books)
+	for _, book := range books {
+		fmt.Printf("book name : %s \n", book.Name)
+	}
+}
+
+func GetBookByAuthor(author string) {
+	var books []models.Book
+	database.DB.Where("author = ?", author).Find(&books)
+	for _, book := range books {
+		fmt.Printf("book name : %s \n", book.Name)
+	}
+}
+
+func GetReadBooks() {
+	var books []models.Book
+	database.DB.Where("is_read = ?", true).Find(&books)
+	for _, book := range books {
+		fmt.Printf("book name : %s \n", book.Name)
+	}
+}
+
+func GetUnreadBooks() {
+	var books []models.Book
+	database.DB.Where("is_read = ?", false).Find(&books)
+	for _, book := range books {
+		fmt.Printf("book name : %s \n", book.Name)
+	}
+
+}
